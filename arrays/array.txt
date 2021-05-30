@@ -1,0 +1,29 @@
+// remember to check if we need to keep track of array values when doing shifting
+
+// when doing insertion and deletion, always keep track of the length of the array where there are values, and while shifting and deleting,
+we will use that length variable in our for loop
+
+// remember to check if we need to skip one pointer when inserted in somewhere middle of the array. e.g. solution to duplicate the zeroes in array
+class Solution {
+    public void duplicateZeros(int[] arr) {
+        int l = arr.length;
+        int lenIndex = arr.length-1;
+        for(int i=0; i < l; i++){
+            if (arr[i]==0 && l>1){
+                for (int j =l-2; j >= i; j--){
+                    arr[j+1] = arr[j];
+                }
+                i += 1;
+            }
+        }
+    }
+}
+
+// when you take condition, both arrays should be non empty with pointers m and n, you can do
+
+while (m > 0 && n > 0) also take condition when one array is finished i. e. while (n > 0)
+
+// remember to use in place deletions using readPointer and writePointer
+only move writePointer when a value is written at that position
+
+
